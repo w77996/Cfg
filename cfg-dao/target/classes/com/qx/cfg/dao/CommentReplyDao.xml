@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qx.cfg.dao.CommentReplyDao">
+  <resultMap id="BaseResultMap" type="com.qx.cfg.pojo.CommentReply">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="comment_id" jdbcType="INTEGER" property="commentId" />
+    <result column="comment_reply_type" jdbcType="TINYINT" property="commentReplyType" />
+    <result column="comment_reply_id" jdbcType="INTEGER" property="commentReplyId" />
+    <result column="comment_reply_content" jdbcType="VARCHAR" property="commentReplyContent" />
+    <result column="comment_to_uid" jdbcType="INTEGER" property="commentToUid" />
+    <result column="comment_from_uid" jdbcType="INTEGER" property="commentFromUid" />
+    <result column="comment_from_thumb_img" jdbcType="VARCHAR" property="commentFromThumbImg" />
+    <result column="comment_from_nickname" jdbcType="VARCHAR" property="commentFromNickname" />
+    <result column="comment_create_time" jdbcType="INTEGER" property="commentCreateTime" />
+    <result column="comment_to_nickname" jdbcType="VARCHAR" property="commentToNickname" />
+    <result column="comment_reply_reward_num" jdbcType="INTEGER" property="commentReplyRewardNum" />
+    <result column="comment_reply_reward" jdbcType="INTEGER" property="commentReplyReward" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, comment_id, comment_reply_type, comment_reply_id, comment_reply_content, comment_to_uid, 
+    comment_from_uid, comment_from_thumb_img, comment_from_nickname, comment_create_time, 
+    comment_to_nickname, comment_reply_reward_num, comment_reply_reward
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from comment_reply
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from comment_reply
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qx.cfg.pojo.CommentReply">
+    insert into comment_reply (id, comment_id, comment_reply_type, 
+      comment_reply_id, comment_reply_content, comment_to_uid, 
+      comment_from_uid, comment_from_thumb_img, comment_from_nickname, 
+      comment_create_time, comment_to_nickname, comment_reply_reward_num, 
+      comment_reply_reward)
+    values (#{id,jdbcType=INTEGER}, #{commentId,jdbcType=INTEGER}, #{commentReplyType,jdbcType=TINYINT}, 
+      #{commentReplyId,jdbcType=INTEGER}, #{commentReplyContent,jdbcType=VARCHAR}, #{commentToUid,jdbcType=INTEGER}, 
+      #{commentFromUid,jdbcType=INTEGER}, #{commentFromThumbImg,jdbcType=VARCHAR}, #{commentFromNickname,jdbcType=VARCHAR}, 
+      #{commentCreateTime,jdbcType=INTEGER}, #{commentToNickname,jdbcType=VARCHAR}, #{commentReplyRewardNum,jdbcType=INTEGER}, 
+      #{commentReplyReward,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qx.cfg.pojo.CommentReply">
+    insert into comment_reply
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="commentId != null">
+        comment_id,
+      </if>
+      <if test="commentReplyType != null">
+        comment_reply_type,
+      </if>
+      <if test="commentReplyId != null">
+        comment_reply_id,
+      </if>
+      <if test="commentReplyContent != null">
+        comment_reply_content,
+      </if>
+      <if test="commentToUid != null">
+        comment_to_uid,
+      </if>
+      <if test="commentFromUid != null">
+        comment_from_uid,
+      </if>
+      <if test="commentFromThumbImg != null">
+        comment_from_thumb_img,
+      </if>
+      <if test="commentFromNickname != null">
+        comment_from_nickname,
+      </if>
+      <if test="commentCreateTime != null">
+        comment_create_time,
+      </if>
+      <if test="commentToNickname != null">
+        comment_to_nickname,
+      </if>
+      <if test="commentReplyRewardNum != null">
+        comment_reply_reward_num,
+      </if>
+      <if test="commentReplyReward != null">
+        comment_reply_reward,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="commentId != null">
+        #{commentId,jdbcType=INTEGER},
+      </if>
+      <if test="commentReplyType != null">
+        #{commentReplyType,jdbcType=TINYINT},
+      </if>
+      <if test="commentReplyId != null">
+        #{commentReplyId,jdbcType=INTEGER},
+      </if>
+      <if test="commentReplyContent != null">
+        #{commentReplyContent,jdbcType=VARCHAR},
+      </if>
+      <if test="commentToUid != null">
+        #{commentToUid,jdbcType=INTEGER},
+      </if>
+      <if test="commentFromUid != null">
+        #{commentFromUid,jdbcType=INTEGER},
+      </if>
+      <if test="commentFromThumbImg != null">
+        #{commentFromThumbImg,jdbcType=VARCHAR},
+      </if>
+      <if test="commentFromNickname != null">
+        #{commentFromNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="commentCreateTime != null">
+        #{commentCreateTime,jdbcType=INTEGER},
+      </if>
+      <if test="commentToNickname != null">
+        #{commentToNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="commentReplyRewardNum != null">
+        #{commentReplyRewardNum,jdbcType=INTEGER},
+      </if>
+      <if test="commentReplyReward != null">
+        #{commentReplyReward,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qx.cfg.pojo.CommentReply">
+    update comment_reply
+    <set>
+      <if test="commentId != null">
+        comment_id = #{commentId,jdbcType=INTEGER},
+      </if>
+      <if test="commentReplyType != null">
+        comment_reply_type = #{commentReplyType,jdbcType=TINYINT},
+      </if>
+      <if test="commentReplyId != null">
+        comment_reply_id = #{commentReplyId,jdbcType=INTEGER},
+      </if>
+      <if test="commentReplyContent != null">
+        comment_reply_content = #{commentReplyContent,jdbcType=VARCHAR},
+      </if>
+      <if test="commentToUid != null">
+        comment_to_uid = #{commentToUid,jdbcType=INTEGER},
+      </if>
+      <if test="commentFromUid != null">
+        comment_from_uid = #{commentFromUid,jdbcType=INTEGER},
+      </if>
+      <if test="commentFromThumbImg != null">
+        comment_from_thumb_img = #{commentFromThumbImg,jdbcType=VARCHAR},
+      </if>
+      <if test="commentFromNickname != null">
+        comment_from_nickname = #{commentFromNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="commentCreateTime != null">
+        comment_create_time = #{commentCreateTime,jdbcType=INTEGER},
+      </if>
+      <if test="commentToNickname != null">
+        comment_to_nickname = #{commentToNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="commentReplyRewardNum != null">
+        comment_reply_reward_num = #{commentReplyRewardNum,jdbcType=INTEGER},
+      </if>
+      <if test="commentReplyReward != null">
+        comment_reply_reward = #{commentReplyReward,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qx.cfg.pojo.CommentReply">
+    update comment_reply
+    set comment_id = #{commentId,jdbcType=INTEGER},
+      comment_reply_type = #{commentReplyType,jdbcType=TINYINT},
+      comment_reply_id = #{commentReplyId,jdbcType=INTEGER},
+      comment_reply_content = #{commentReplyContent,jdbcType=VARCHAR},
+      comment_to_uid = #{commentToUid,jdbcType=INTEGER},
+      comment_from_uid = #{commentFromUid,jdbcType=INTEGER},
+      comment_from_thumb_img = #{commentFromThumbImg,jdbcType=VARCHAR},
+      comment_from_nickname = #{commentFromNickname,jdbcType=VARCHAR},
+      comment_create_time = #{commentCreateTime,jdbcType=INTEGER},
+      comment_to_nickname = #{commentToNickname,jdbcType=VARCHAR},
+      comment_reply_reward_num = #{commentReplyRewardNum,jdbcType=INTEGER},
+      comment_reply_reward = #{commentReplyReward,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

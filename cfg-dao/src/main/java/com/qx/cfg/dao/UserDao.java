@@ -1,18 +1,17 @@
 package com.qx.cfg.dao;
 
-import java.util.List;
+import com.qx.cfg.pojo.User;
 
-import org.apache.ibatis.annotations.Param;
-
-import com.qx.cfg.bean.User;
-
-
-//@Repository
 public interface UserDao {
+    int deleteByPrimaryKey(Integer id);
 
-    User selectUserById(@Param("userId") Long userId);
+    int insert(User record);
 
-    User selectUserByPhoneOrEmail(@Param("emailOrPhone") String emailOrPhone, @Param("state") Short state);
+    int insertSelective(User record);
 
-    List<User> selectAllUser();
+    User selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
 }

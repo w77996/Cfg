@@ -1,14 +1,19 @@
 package com.qx.cfg.service;
 
-import java.util.List;
 
-import com.qx.cfg.bean.User;
+import com.qx.cfg.pojo.User;
 
 
 public interface UserService {
-	  List<User> getAllUser();
+	int deleteByPrimaryKey(Integer id);
 
-	    User getUserByPhoneOrEmail(String emailOrPhone, Short state);
+    int insert(User record);
 
-	    User getUserById(Long userId);
+    int insertSelective(User record);
+
+    User selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
 }

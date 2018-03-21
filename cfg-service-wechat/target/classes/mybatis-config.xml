@@ -9,7 +9,7 @@
 	
 	<!-- 别名 -->
 	<typeAliases>
-		<package name="com.qx.cfg.bean"/>
+		<package name="com.qx.cfg.pojo"/>
 	</typeAliases>
 	
 	<!-- Mapper 位置 配置

@@ -25,6 +25,8 @@
 	<!-- 处理器 映射器  适配器 -->
 	<mvc:annotation-driven/>
 	
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+	
 	<!-- 静态资源访问（不拦截此目录下的东西的访问） -->
     <mvc:resources location="/WEB-INF/static/" mapping="/static/**" />
     
