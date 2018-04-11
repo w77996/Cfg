@@ -1,34 +1,27 @@
 package com.qx.cfg.pojo;
 
-import java.io.Serializable;
+public class Comment {
+    private Integer id;
 
-public class Comment implements Serializable{
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+    private Integer blogId;
 
-	private Integer id;
+    private String content;
 
-    private Integer commentBlogId;
+    private Integer fromUid;
 
-    private String commentContent;
+    private String nickname;
 
-    private Integer commentFromUid;
+    private String thumbImg;
 
-    private String commentNickname;
+    private Integer likeNum;
 
-    private String commentThumbImg;
+    private Integer replyNum;
 
-    private Integer commentLikeNum;
+    private Integer rewardNum;
 
-    private Integer commentReplyNum;
+    private Integer reward;
 
-    private Integer commentRewardNum;
-
-    private Integer commentReward;
-
-    private Integer commentCreateTime;
+    private Integer createTime;
 
     public Integer getId() {
         return id;
@@ -38,83 +31,83 @@ public class Comment implements Serializable{
         this.id = id;
     }
 
-    public Integer getCommentBlogId() {
-        return commentBlogId;
+    public Integer getBlogId() {
+        return blogId;
     }
 
-    public void setCommentBlogId(Integer commentBlogId) {
-        this.commentBlogId = commentBlogId;
+    public void setBlogId(Integer blogId) {
+        this.blogId = blogId;
     }
 
-    public String getCommentContent() {
-        return commentContent;
+    public String getContent() {
+        return content;
     }
 
-    public void setCommentContent(String commentContent) {
-        this.commentContent = commentContent == null ? null : commentContent.trim();
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
     }
 
-    public Integer getCommentFromUid() {
-        return commentFromUid;
+    public Integer getFromUid() {
+        return fromUid;
     }
 
-    public void setCommentFromUid(Integer commentFromUid) {
-        this.commentFromUid = commentFromUid;
+    public void setFromUid(Integer fromUid) {
+        this.fromUid = fromUid;
     }
 
-    public String getCommentNickname() {
-        return commentNickname;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setCommentNickname(String commentNickname) {
-        this.commentNickname = commentNickname == null ? null : commentNickname.trim();
+    public void setNickname(String nickname) {
+        this.nickname = nickname == null ? null : nickname.trim();
     }
 
-    public String getCommentThumbImg() {
-        return commentThumbImg;
+    public String getThumbImg() {
+        return thumbImg;
     }
 
-    public void setCommentThumbImg(String commentThumbImg) {
-        this.commentThumbImg = commentThumbImg == null ? null : commentThumbImg.trim();
+    public void setThumbImg(String thumbImg) {
+        this.thumbImg = thumbImg == null ? null : thumbImg.trim();
     }
 
-    public Integer getCommentLikeNum() {
-        return commentLikeNum;
+    public Integer getLikeNum() {
+        return likeNum;
     }
 
-    public void setCommentLikeNum(Integer commentLikeNum) {
-        this.commentLikeNum = commentLikeNum;
+    public void setLikeNum(Integer likeNum) {
+        this.likeNum = likeNum;
     }
 
-    public Integer getCommentReplyNum() {
-        return commentReplyNum;
+    public Integer getReplyNum() {
+        return replyNum;
     }
 
-    public void setCommentReplyNum(Integer commentReplyNum) {
-        this.commentReplyNum = commentReplyNum;
+    public void setReplyNum(Integer replyNum) {
+        this.replyNum = replyNum;
     }
 
-    public Integer getCommentRewardNum() {
-        return commentRewardNum;
+    public Integer getRewardNum() {
+        return rewardNum;
     }
 
-    public void setCommentRewardNum(Integer commentRewardNum) {
-        this.commentRewardNum = commentRewardNum;
+    public void setRewardNum(Integer rewardNum) {
+        this.rewardNum = rewardNum;
     }
 
-    public Integer getCommentReward() {
-        return commentReward;
+    public Integer getReward() {
+        return reward;
     }
 
-    public void setCommentReward(Integer commentReward) {
-        this.commentReward = commentReward;
+    public void setReward(Integer reward) {
+        this.reward = reward;
     }
 
-    public Integer getCommentCreateTime() {
-        return commentCreateTime;
+    public Integer getCreateTime() {
+        return createTime;
     }
 
-    public void setCommentCreateTime(Integer commentCreateTime) {
-        this.commentCreateTime = commentCreateTime;
+    public void setCreateTime(Integer createTime) {
+        this.createTime = createTime;
     }
 }

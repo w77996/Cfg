@@ -1,38 +1,27 @@
 package com.qx.cfg.pojo;
 
-import java.io.Serializable;
-
-public class CommentReply implements Serializable{
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
-	private Integer id;
+public class CommentReply {
+    private Integer id;
 
     private Integer commentId;
 
-    private Byte commentReplyType;
+    private Byte replyType;
 
-    private Integer commentReplyId;
+    private Integer replyId;
 
-    private String commentReplyContent;
+    private String replyContent;
 
-    private Integer commentToUid;
+    private Integer toUid;
 
-    private Integer commentFromUid;
+    private Integer fromUid;
 
-    private String commentFromThumbImg;
+    private String fromThumbImg;
 
-    private String commentFromNickname;
+    private String fromNickname;
 
-    private Integer commentCreateTime;
+    private Integer createTime;
 
-    private String commentToNickname;
-
-    private Integer commentReplyRewardNum;
-
-    private Integer commentReplyReward;
+    private String toNickname;
 
     public Integer getId() {
         return id;
@@ -50,91 +39,75 @@ public class CommentReply implements Serializable{
         this.commentId = commentId;
     }
 
-    public Byte getCommentReplyType() {
-        return commentReplyType;
+    public Byte getReplyType() {
+        return replyType;
     }
 
-    public void setCommentReplyType(Byte commentReplyType) {
-        this.commentReplyType = commentReplyType;
+    public void setReplyType(Byte replyType) {
+        this.replyType = replyType;
     }
 
-    public Integer getCommentReplyId() {
-        return commentReplyId;
+    public Integer getReplyId() {
+        return replyId;
     }
 
-    public void setCommentReplyId(Integer commentReplyId) {
-        this.commentReplyId = commentReplyId;
+    public void setReplyId(Integer replyId) {
+        this.replyId = replyId;
     }
 
-    public String getCommentReplyContent() {
-        return commentReplyContent;
+    public String getReplyContent() {
+        return replyContent;
     }
 
-    public void setCommentReplyContent(String commentReplyContent) {
-        this.commentReplyContent = commentReplyContent == null ? null : commentReplyContent.trim();
+    public void setReplyContent(String replyContent) {
+        this.replyContent = replyContent == null ? null : replyContent.trim();
     }
 
-    public Integer getCommentToUid() {
-        return commentToUid;
+    public Integer getToUid() {
+        return toUid;
     }
 
-    public void setCommentToUid(Integer commentToUid) {
-        this.commentToUid = commentToUid;
+    public void setToUid(Integer toUid) {
+        this.toUid = toUid;
     }
 
-    public Integer getCommentFromUid() {
-        return commentFromUid;
+    public Integer getFromUid() {
+        return fromUid;
     }
 
-    public void setCommentFromUid(Integer commentFromUid) {
-        this.commentFromUid = commentFromUid;
+    public void setFromUid(Integer fromUid) {
+        this.fromUid = fromUid;
     }
 
-    public String getCommentFromThumbImg() {
-        return commentFromThumbImg;
+    public String getFromThumbImg() {
+        return fromThumbImg;
     }
 
-    public void setCommentFromThumbImg(String commentFromThumbImg) {
-        this.commentFromThumbImg = commentFromThumbImg == null ? null : commentFromThumbImg.trim();
+    public void setFromThumbImg(String fromThumbImg) {
+        this.fromThumbImg = fromThumbImg == null ? null : fromThumbImg.trim();
     }
 
-    public String getCommentFromNickname() {
-        return commentFromNickname;
+    public String getFromNickname() {
+        return fromNickname;
     }
 
-    public void setCommentFromNickname(String commentFromNickname) {
-        this.commentFromNickname = commentFromNickname == null ? null : commentFromNickname.trim();
+    public void setFromNickname(String fromNickname) {
+        this.fromNickname = fromNickname == null ? null : fromNickname.trim();
     }
 
-    public Integer getCommentCreateTime() {
-        return commentCreateTime;
+    public Integer getCreateTime() {
+        return createTime;
     }
 
-    public void setCommentCreateTime(Integer commentCreateTime) {
-        this.commentCreateTime = commentCreateTime;
+    public void setCreateTime(Integer createTime) {
+        this.createTime = createTime;
     }
 
-    public String getCommentToNickname() {
-        return commentToNickname;
+    public String getToNickname() {
+        return toNickname;
     }
 
-    public void setCommentToNickname(String commentToNickname) {
-        this.commentToNickname = commentToNickname == null ? null : commentToNickname.trim();
-    }
-
-    public Integer getCommentReplyRewardNum() {
-        return commentReplyRewardNum;
-    }
-
-    public void setCommentReplyRewardNum(Integer commentReplyRewardNum) {
-        this.commentReplyRewardNum = commentReplyRewardNum;
-    }
-
-    public Integer getCommentReplyReward() {
-        return commentReplyReward;
-    }
-
-    public void setCommentReplyReward(Integer commentReplyReward) {
-        this.commentReplyReward = commentReplyReward;
+    public void setToNickname(String toNickname) {
+        this.toNickname = toNickname == null ? null : toNickname.trim();
     }
 }

@@ -42,6 +42,7 @@ public class HttpDataAspect {
 		}
 		long time = System.currentTimeMillis() - startTime;
 		resp = JSON.toJSONString(result);
+		logger.info("resp : "+resp);
 		return result;
 	}
 

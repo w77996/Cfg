@@ -3,9 +3,11 @@ package com.qx.cfg.pojo;
 public class UserFollow {
     private Integer id;
 
-    private Integer userId;
+    private String openId;
 
-    private Integer followId;
+    private Integer followOpenId;
+
+    private Integer followTime;
 
     public Integer getId() {
         return id;
@@ -15,19 +17,27 @@ public class UserFollow {
         this.id = id;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public String getOpenId() {
+        return openId;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setOpenId(String openId) {
+        this.openId = openId == null ? null : openId.trim();
     }
 
-    public Integer getFollowId() {
-        return followId;
+    public Integer getFollowOpenId() {
+        return followOpenId;
     }
 
-    public void setFollowId(Integer followId) {
-        this.followId = followId;
+    public void setFollowOpenId(Integer followOpenId) {
+        this.followOpenId = followOpenId;
+    }
+
+    public Integer getFollowTime() {
+        return followTime;
+    }
+
+    public void setFollowTime(Integer followTime) {
+        this.followTime = followTime;
     }
 }

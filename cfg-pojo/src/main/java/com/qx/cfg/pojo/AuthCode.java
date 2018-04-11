@@ -5,6 +5,8 @@ public class AuthCode {
 
     private String phone;
 
+    private String openId;
+
     private String authCode;
 
     private Integer createtime;
@@ -23,6 +25,14 @@ public class AuthCode {
 
     public void setPhone(String phone) {
         this.phone = phone == null ? null : phone.trim();
+    }
+
+    public String getOpenId() {
+        return openId;
+    }
+
+    public void setOpenId(String openId) {
+        this.openId = openId == null ? null : openId.trim();
     }
 
     public String getAuthCode() {

@@ -1,42 +1,41 @@
 package com.qx.cfg.pojo;
 
-import java.io.Serializable;
-
-public class User implements Serializable {
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 4546104641625150671L;
-
-	private Integer id;
+public class User {
+    private Integer id;
 
     private String userName;
 
-    private String userPwd;
+    private String pwd;
 
-    private String userNickname;
+    private String wechatNickname;
 
-    private String userPhone;
+    private String openId;
 
-    private Byte userSex;
+    private String unionid;
 
-    private String userQq;
+    private Byte status;
 
-    private String userEmail;
+    private String thumbImg;
 
-    private String userAddress;
+    private String phone;
 
-    private Integer userMark;
+    private Byte sex;
 
-    private String userLastLoginIp;
+    private String qq;
 
-    private Integer userBirthday;
+    private String email;
 
-    private String userDescription;
+    private String address;
 
-    private String userThumbImg;
+    private Integer mark;
 
-    private Integer userRegisterTime;
+    private String lastLoginIp;
+
+    private Integer birthday;
+
+    private String description;
+
+    private Integer registerTime;
 
     public Integer getId() {
         return id;
@@ -54,107 +53,131 @@ public class User implements Serializable {
         this.userName = userName == null ? null : userName.trim();
     }
 
-    public String getUserPwd() {
-        return userPwd;
+    public String getPwd() {
+        return pwd;
     }
 
-    public void setUserPwd(String userPwd) {
-        this.userPwd = userPwd == null ? null : userPwd.trim();
+    public void setPwd(String pwd) {
+        this.pwd = pwd == null ? null : pwd.trim();
     }
 
-    public String getUserNickname() {
-        return userNickname;
+    public String getWechatNickname() {
+        return wechatNickname;
     }
 
-    public void setUserNickname(String userNickname) {
-        this.userNickname = userNickname == null ? null : userNickname.trim();
+    public void setWechatNickname(String wechatNickname) {
+        this.wechatNickname = wechatNickname == null ? null : wechatNickname.trim();
     }
 
-    public String getUserPhone() {
-        return userPhone;
+    public String getOpenId() {
+        return openId;
     }
 
-    public void setUserPhone(String userPhone) {
-        this.userPhone = userPhone == null ? null : userPhone.trim();
+    public void setOpenId(String openId) {
+        this.openId = openId == null ? null : openId.trim();
     }
 
-    public Byte getUserSex() {
-        return userSex;
+    public String getUnionid() {
+        return unionid;
     }
 
-    public void setUserSex(Byte userSex) {
-        this.userSex = userSex;
+    public void setUnionid(String unionid) {
+        this.unionid = unionid == null ? null : unionid.trim();
     }
 
-    public String getUserQq() {
-        return userQq;
+    public Byte getStatus() {
+        return status;
     }
 
-    public void setUserQq(String userQq) {
-        this.userQq = userQq == null ? null : userQq.trim();
+    public void setStatus(Byte status) {
+        this.status = status;
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public String getThumbImg() {
+        return thumbImg;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail == null ? null : userEmail.trim();
+    public void setThumbImg(String thumbImg) {
+        this.thumbImg = thumbImg == null ? null : thumbImg.trim();
     }
 
-    public String getUserAddress() {
-        return userAddress;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setUserAddress(String userAddress) {
-        this.userAddress = userAddress == null ? null : userAddress.trim();
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
     }
 
-    public Integer getUserMark() {
-        return userMark;
+    public Byte getSex() {
+        return sex;
     }
 
-    public void setUserMark(Integer userMark) {
-        this.userMark = userMark;
+    public void setSex(Byte sex) {
+        this.sex = sex;
     }
 
-    public String getUserLastLoginIp() {
-        return userLastLoginIp;
+    public String getQq() {
+        return qq;
     }
 
-    public void setUserLastLoginIp(String userLastLoginIp) {
-        this.userLastLoginIp = userLastLoginIp == null ? null : userLastLoginIp.trim();
+    public void setQq(String qq) {
+        this.qq = qq == null ? null : qq.trim();
     }
 
-    public Integer getUserBirthday() {
-        return userBirthday;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserBirthday(Integer userBirthday) {
-        this.userBirthday = userBirthday;
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
     }
 
-    public String getUserDescription() {
-        return userDescription;
+    public String getAddress() {
+        return address;
     }
 
-    public void setUserDescription(String userDescription) {
-        this.userDescription = userDescription == null ? null : userDescription.trim();
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
     }
 
-    public String getUserThumbImg() {
-        return userThumbImg;
+    public Integer getMark() {
+        return mark;
     }
 
-    public void setUserThumbImg(String userThumbImg) {
-        this.userThumbImg = userThumbImg == null ? null : userThumbImg.trim();
+    public void setMark(Integer mark) {
+        this.mark = mark;
     }
 
-    public Integer getUserRegisterTime() {
-        return userRegisterTime;
+    public String getLastLoginIp() {
+        return lastLoginIp;
     }
 
-    public void setUserRegisterTime(Integer userRegisterTime) {
-        this.userRegisterTime = userRegisterTime;
+    public void setLastLoginIp(String lastLoginIp) {
+        this.lastLoginIp = lastLoginIp == null ? null : lastLoginIp.trim();
+    }
+
+    public Integer getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Integer birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
+    }
+
+    public Integer getRegisterTime() {
+        return registerTime;
+    }
+
+    public void setRegisterTime(Integer registerTime) {
+        this.registerTime = registerTime;
     }
 }

@@ -3,27 +3,29 @@ package com.qx.cfg.pojo;
 public class Blog {
     private Integer id;
 
-    private Integer userId;
+    private Integer openId;
 
-    private String blogDescription;
+    private String description;
 
-    private String blogContent;
+    private String content;
 
-    private String blogTitle;
+    private String title;
 
-    private Byte blogType;
+    private Byte type;
 
-    private Integer blogCreateTime;
+    private Integer createTime;
 
-    private Integer blogView;
+    private Integer view;
 
-    private String blogImageUrl;
+    private String shareUrl;
 
-    private String blogVideoUrl;
+    private String imageUrl;
 
-    private Integer blogRewardNum;
+    private String videoUrl;
 
-    private Integer blogReward;
+    private Integer likeNum;
+
+    private Integer rewardNum;
 
     public Integer getId() {
         return id;
@@ -33,91 +35,99 @@ public class Blog {
         this.id = id;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getOpenId() {
+        return openId;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setOpenId(Integer openId) {
+        this.openId = openId;
     }
 
-    public String getBlogDescription() {
-        return blogDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setBlogDescription(String blogDescription) {
-        this.blogDescription = blogDescription == null ? null : blogDescription.trim();
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
     }
 
-    public String getBlogContent() {
-        return blogContent;
+    public String getContent() {
+        return content;
     }
 
-    public void setBlogContent(String blogContent) {
-        this.blogContent = blogContent == null ? null : blogContent.trim();
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
     }
 
-    public String getBlogTitle() {
-        return blogTitle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setBlogTitle(String blogTitle) {
-        this.blogTitle = blogTitle == null ? null : blogTitle.trim();
+    public void setTitle(String title) {
+        this.title = title == null ? null : title.trim();
     }
 
-    public Byte getBlogType() {
-        return blogType;
+    public Byte getType() {
+        return type;
     }
 
-    public void setBlogType(Byte blogType) {
-        this.blogType = blogType;
+    public void setType(Byte type) {
+        this.type = type;
     }
 
-    public Integer getBlogCreateTime() {
-        return blogCreateTime;
+    public Integer getCreateTime() {
+        return createTime;
     }
 
-    public void setBlogCreateTime(Integer blogCreateTime) {
-        this.blogCreateTime = blogCreateTime;
+    public void setCreateTime(Integer createTime) {
+        this.createTime = createTime;
     }
 
-    public Integer getBlogView() {
-        return blogView;
+    public Integer getView() {
+        return view;
     }
 
-    public void setBlogView(Integer blogView) {
-        this.blogView = blogView;
+    public void setView(Integer view) {
+        this.view = view;
     }
 
-    public String getBlogImageUrl() {
-        return blogImageUrl;
+    public String getShareUrl() {
+        return shareUrl;
     }
 
-    public void setBlogImageUrl(String blogImageUrl) {
-        this.blogImageUrl = blogImageUrl == null ? null : blogImageUrl.trim();
+    public void setShareUrl(String shareUrl) {
+        this.shareUrl = shareUrl == null ? null : shareUrl.trim();
     }
 
-    public String getBlogVideoUrl() {
-        return blogVideoUrl;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setBlogVideoUrl(String blogVideoUrl) {
-        this.blogVideoUrl = blogVideoUrl == null ? null : blogVideoUrl.trim();
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl == null ? null : imageUrl.trim();
     }
 
-    public Integer getBlogRewardNum() {
-        return blogRewardNum;
+    public String getVideoUrl() {
+        return videoUrl;
     }
 
-    public void setBlogRewardNum(Integer blogRewardNum) {
-        this.blogRewardNum = blogRewardNum;
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl == null ? null : videoUrl.trim();
     }
 
-    public Integer getBlogReward() {
-        return blogReward;
+    public Integer getLikeNum() {
+        return likeNum;
     }
 
-    public void setBlogReward(Integer blogReward) {
-        this.blogReward = blogReward;
+    public void setLikeNum(Integer likeNum) {
+        this.likeNum = likeNum;
+    }
+
+    public Integer getRewardNum() {
+        return rewardNum;
+    }
+
+    public void setRewardNum(Integer rewardNum) {
+        this.rewardNum = rewardNum;
     }
 }

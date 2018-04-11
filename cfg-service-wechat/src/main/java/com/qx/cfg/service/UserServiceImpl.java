@@ -1,21 +1,15 @@
 package com.qx.cfg.service;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.qx.cfg.dao.UserDao;
 import com.qx.cfg.pojo.User;
 
 
 @Service
 @Transactional(rollbackFor = Exception.class)
 public class UserServiceImpl implements UserService {
-
-    @Autowired
-    private UserDao userDao;
-
 
 	@Override
 	public int deleteByPrimaryKey(Integer id) {
@@ -38,7 +32,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User selectByPrimaryKey(Integer id) {
 		// TODO Auto-generated method stub
-		return userDao.selectByPrimaryKey(id);
+		return null;
 	}
 
 	@Override
@@ -52,6 +46,8 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
 
  
 }
