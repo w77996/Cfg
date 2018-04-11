@@ -1,10 +1,6 @@
 package com.qx.cfg.controller;
 
 
-
-
-
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.qx.cfg.exception.BizException;
+import com.qx.cfg.pojo.RespCode;
 import com.qx.cfg.pojo.User;
 import com.qx.cfg.service.UserService;
 import com.qx.cfg.util.StringUtil;
@@ -51,6 +50,7 @@ public class UserController {
     }
     
     @RequestMapping("/login")
+    @ResponseBody
     public String login(@RequestParam(value="open_id") String openId,@RequestParam(value="code") String code){
     	if (StringUtils.isAnyEmpty(openId, code)) {
 			throw new BizException(RespCode.NOTEXIST_PARAM);
