@@ -54,6 +54,12 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-core-asl -->
+		<!-- <dependency>
+		    <groupId>org.codehaus.jackson</groupId>
+		    <artifactId>jackson-core-asl</artifactId>
+		</dependency> -->
+		
 		<!--freemarker -->
 		<dependency>
 			<groupId>org.freemarker</groupId>
@@ -147,28 +153,6 @@
 			<artifactId>json</artifactId>
 		</dependency>
 
-
-		<!-- solrJ -->
-		<dependency>
-			<groupId>org.apache.solr</groupId>
-			<artifactId>solr-solrj</artifactId>
-		</dependency>
-
-		<!-- jedis Java接口 -->
-		<dependency>
-			<groupId>redis.clients</groupId>
-			<artifactId>jedis</artifactId>
-		</dependency>
-
-		<!-- FastDFS client -->
-		<!-- <dependency> <groupId>fastdfs_client</groupId> <artifactId>fastdfs_client</artifactId> 
-			</dependency> -->
-
-		<dependency>
-			<groupId>org.jboss.netty</groupId>
-			<artifactId>netty</artifactId>
-		</dependency>
-
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
@@ -178,7 +162,7 @@
 					<groupId>org.springframework</groupId>
 				</exclusion>
 			</exclusions>
-		</dependency>
+		</dependency> 
 
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -186,7 +170,7 @@
 		</dependency>
 
 		<!-- Zookeeper 用于分布式服务管理 -->
-		<dependency>
+		 <dependency>
 			<groupId>org.apache.zookeeper</groupId>
 			<artifactId>zookeeper</artifactId>
 		</dependency>
@@ -196,21 +180,25 @@
 			<artifactId>zkclient</artifactId>
 		</dependency>
 		<!-- Zookeeper 用于分布式服务管理 end -->
-		<!-- Active MQ 开始 -->
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-all</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-pool</artifactId>
-		</dependency>
-		<!-- Active MQ 结束 -->
+		
 		<!-- tomcat7 servlet-api -->
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-jsp-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5.5</version>
+</dependency>
+		
 	</dependencies>
 </project>

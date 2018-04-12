@@ -10,14 +10,12 @@ import com.qx.cfg.pojo.HttpBaseBean;
 import com.qx.cfg.pojo.RespCode;
 
 @Controller
-@RequestMapping("/comment")
-public class CommentController {
+@RequestMapping("/main")
+public class PictureController {
 	
-	@RequestMapping("/list")
-	public HttpBaseBean followList(@RequestParam String open_id,@RequestParam String token,@RequestParam String page,@RequestParam String size){
-		if(StringUtils.isAnyEmpty(open_id,token,page,size)){
-			throw new BizException(RespCode.NOTEXIST_PARAM);
-		}
+	@RequestMapping("/picture")
+	public HttpBaseBean getMainPicture(){
+		
 		return new HttpBaseBean();
 	}
 

@@ -27,7 +27,7 @@ import com.qx.cfg.controller.UserController;
 @ContextConfiguration("classpath:spring-mvc.xml")//加载Spring配置文件  
 public class UserLoginControllerTest {
 	
-	@Autowired
+	/*@Autowired
 	UserController userController;
 	@Autowired
 	 WebApplicationContext wac;
@@ -39,11 +39,13 @@ public class UserLoginControllerTest {
 	}  
 	 @Test  
 	    public void getArticleListTest() throws Exception{  
-		 ResultActions resultActions = this.mockMvc.perform(MockMvcRequestBuilders.get("/user/login").param("id", "1"));
+		 ResultActions resultActions = this.mockMvc.perform(MockMvcRequestBuilders.get("/user/login"));
 	        MvcResult mvcResult = resultActions.andReturn();
 	        String result = mvcResult.getResponse().getContentAsString();
 	        System.out.println("=====客户端获得反馈数据:" + result); 
 	          
-	    }  
+	    }  */
+	
+	
 
 }

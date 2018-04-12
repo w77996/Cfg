@@ -7,10 +7,13 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
+
 import com.alibaba.fastjson.JSON;
+import com.qx.cfg.exception.BizException;
+import com.qx.cfg.pojo.HttpBaseBean;
+import com.qx.cfg.pojo.RespCode;
 
 @Aspect
 @Component
@@ -21,35 +24,33 @@ public class HttpDataAspect {
 	/*@Autowired
 	IApilogService apilogService;
 */
+	@SuppressWarnings("unchecked")
 	@Around("execution(@org.springframework.web.bind.annotation.RequestMapping * *(..))")
 	public Object requestMappingAspect(ProceedingJoinPoint pjp) throws Throwable {
 		Object result = null;
 		MethodInvocationProceedingJoinPoint methodJoinPoint = (MethodInvocationProceedingJoinPoint) pjp;
 		MethodSignature methodSign = (MethodSignature) methodJoinPoint.getSignature();
-		String reqParams = JSON.toJSONString(methodJoinPoint.getArgs());
-		long startTime = System.currentTimeMillis();
-		// methodSign.getDeclaringTypeName(), methodSign.getName()
-		String name = methodSign.toShortString();
 		String resp = "";
-		int rstatus = 0;
-		String rmsg = "";
 		try {
 			result = pjp.proceed();
 		} catch (Exception e) {
 			logger.error("[HTTP] process error:", e);
-			rstatus = 1;
-			rmsg = e.getMessage();
+			if (methodSign.getReturnType().isAssignableFrom(HttpBaseBean.class)) {
+				HttpBaseBean httpBaseBean = new HttpBaseBean();
+				httpBaseBean.setCode(RespCode.SYS_ERR.getCode());
+				httpBaseBean.setMessage(RespCode.SYS_ERR.getMsg());
+				logger.info(httpBaseBean.toString());
+				if (e instanceof BizException) {
+					BizException bizException = (BizException) e;
+					httpBaseBean.setCode(bizException.getCode());
+					httpBaseBean.setMessage(bizException.getMessage());
+				}
+				result = httpBaseBean;
+			}
 		}
-		long time = System.currentTimeMillis() - startTime;
+		//long time = System.currentTimeMillis() - startTime;
 		resp = JSON.toJSONString(result);
 		logger.info("resp : "+resp);
 		return result;
-	}
-
-	private Class<?> returnClass(ProceedingJoinPoint pjp) {
-		MethodInvocationProceedingJoinPoint methodJoinPoint = (MethodInvocationProceedingJoinPoint) pjp;
-		MethodSignature methodSign = (MethodSignature) methodJoinPoint.getSignature();
-		// String returnType = methodSign.getReturnType().getSimpleName();
-		return methodSign.getReturnType();
 	}
 }

@@ -1,6 +1,8 @@
 package com.qx.cfg.controller;
 
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.qx.cfg.exception.BizException;
+import com.qx.cfg.pojo.HttpBaseBean;
 import com.qx.cfg.pojo.RespCode;
 import com.qx.cfg.pojo.User;
 import com.qx.cfg.service.UserService;
@@ -50,12 +53,56 @@ public class UserController {
     }
     
     @RequestMapping("/login")
-    @ResponseBody
-    public String login(@RequestParam(value="open_id") String openId,@RequestParam(value="code") String code){
-    	if (StringUtils.isAnyEmpty(openId, code)) {
+    public HttpBaseBean login(HttpServletRequest request,@RequestParam String open_id,@RequestParam String code){
+    	if (StringUtils.isAnyEmpty(open_id, code)) {
 			throw new BizException(RespCode.NOTEXIST_PARAM);
-		}
+    	}
+    	//获取open_id和session_key
+    	//String result = 
+    	//生成token存入数据库
     	
-    	return "index";
+    	//发送token和open_id值客户端
+    	
+    	return new HttpBaseBean();
+    }
+    
+    @RequestMapping("/auth_code")
+    public HttpBaseBean userAuthCode(@RequestParam String open_id,@RequestParam String token,@RequestParam String phone){
+    	if (StringUtils.isAnyEmpty(open_id, token,phone)) {
+			throw new BizException(RespCode.NOTEXIST_PARAM);
+    	}
+    	
+    	
+    	return new HttpBaseBean();
+    }
+    
+    @RequestMapping("/updateinfo")
+    public HttpBaseBean userUpdate(@RequestParam String open_id,@RequestParam String token,@RequestParam User user){
+    	if (StringUtils.isAnyEmpty(open_id, token)) {
+			throw new BizException(RespCode.NOTEXIST_PARAM);
+    	}
+    	
+    	
+    	return new HttpBaseBean();
+    }
+    
+    @RequestMapping("/getinfo")
+    public HttpBaseBean userGetInfo(@RequestParam String open_id,@RequestParam String token){
+    	if (StringUtils.isAnyEmpty(open_id, token)) {
+			throw new BizException(RespCode.NOTEXIST_PARAM);
+    	}
+    	
+    	
+    	return new HttpBaseBean();
+    }
+    
+    @RequestMapping("/getinfo/detail")
+    public HttpBaseBean userGetInfoDetail(@RequestParam String open_id,@RequestParam String token){
+    	if (StringUtils.isAnyEmpty(open_id, token)) {
+			throw new BizException(RespCode.NOTEXIST_PARAM);
+    	}
+    	
+    	
+    	return new HttpBaseBean();
     }
 }
