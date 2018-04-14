@@ -16,6 +16,7 @@ import com.qx.cfg.exception.BizException;
 import com.qx.cfg.pojo.HttpBaseBean;
 import com.qx.cfg.pojo.RespCode;
 import com.qx.cfg.pojo.User;
+import com.qx.cfg.service.TokenService;
 import com.qx.cfg.service.UserService;
 import com.qx.cfg.util.StringUtil;
 
@@ -26,6 +27,8 @@ public class UserController {
     private Logger log = Logger.getLogger(UserController.class);
     @Autowired
     private UserService userService;
+    @Autowired
+    private TokenService tokenService;
 
     @RequestMapping("/showUser")
     public String showUser(Model model){
@@ -62,7 +65,7 @@ public class UserController {
     	//生成token存入数据库
     	
     	//发送token和open_id值客户端
-    	
+    	String token = tokenService.genToken(open_id);
     	return new HttpBaseBean();
     }
     

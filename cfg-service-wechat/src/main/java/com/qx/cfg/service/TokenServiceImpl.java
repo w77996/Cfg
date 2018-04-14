@@ -59,14 +59,19 @@ public class TokenServiceImpl implements TokenService{
 		int randomCode = Utils.randomInt(10, 10000);
 		String otoken = "U" + timestamp + open_id + "-" + randomCode;
 		// md5 签名
-		//String token = Utils.getMD5(otoken);
+		String token = Utils.getMD5(otoken);
 
 		// save to db
 		/*Timestamp now = Utils.getCurrentTimestamp();
 		jdbcTemplate.update("replace into token_info (token, user_id, createtime) values (?,?,?)",
 				new Object[] { token, userId, now }, new int[] { Types.VARCHAR, Types.INTEGER, Types.TIMESTAMP });
-*/
-		return null;
+*/		
+		Token tokenBean = new Token();
+		tokenBean.setCreateTime(Integer.parseInt(timestamp+""));
+		tokenBean.setToken(token);
+		tokenBean.setOpenId(open_id);
+		tokenMapper.updateByPrimaryKey(tokenBean);
+		return token;
 	}
 
 }

@@ -14,4 +14,14 @@ public interface TokenMapper {
     int updateByPrimaryKeySelective(Token record);
 
     int updateByPrimaryKey(Token record);
+    /**
+     * 添加更新token
+     * @Title:           updateTokenByOpenId
+     * @Description:     TODO
+     * @param:           @param record
+     * @param:           @return   
+     * @return:          int   
+     * @throws
+     */
+    int updateTokenByOpenId(Token record);
 }

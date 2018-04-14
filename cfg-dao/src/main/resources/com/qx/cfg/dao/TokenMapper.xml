@@ -11,7 +11,7 @@
     id, open_id, token, create_time
   </sql>
   <select id="updateTokenByOpenId" parameterType="com.qx.cfg.pojo.Token">
-  	update token,create_time from token where open_id=#{openId,jdbcType=VARCHAR}
+  	replace into token(open_id,token,create_time) values (#{openId},#{token},#{createTime})
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
