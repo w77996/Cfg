@@ -11,7 +11,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.alibaba.fastjson.JSONObject;
 import com.qx.cfg.dao.CommentMapper;
+import com.qx.cfg.dao.UserMapper;
 import com.qx.cfg.pojo.Comment;
+import com.qx.cfg.pojo.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-context.xml"})
@@ -25,6 +27,9 @@ public class TestS {
 	@Autowired
 	private CommentMapper commentMapper;
 	
+	@Autowired
+	private UserMapper userMapper;
+	
 	@Test
 	public void testAdd() throws Exception {
 		
@@ -32,8 +37,11 @@ public class TestS {
 		System.out.println(users.size());
 		TestBook testBook = testBookService.findById("1000");
 		System.out.println(testBook.getBookName());*/
-		Comment comments = commentMapper.selectByPrimaryKey(5);
-		System.out.println(comments.getContent());
+		/*Comment comments = commentMapper.selectByPrimaryKey(5);
+		System.out.println(comments.getContent());*/
+		
+		User user = userMapper.selectUserByOpenId("2");
+		System.out.println(user.getAddress());
 		
 	}
 	

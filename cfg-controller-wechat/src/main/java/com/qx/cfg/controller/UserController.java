@@ -74,7 +74,7 @@ public class UserController {
     	if (StringUtils.isAnyEmpty(open_id, token,phone)) {
 			throw new BizException(RespCode.NOTEXIST_PARAM);
     	}
-    	
+    
     	
     	return new HttpBaseBean();
     }
@@ -84,7 +84,7 @@ public class UserController {
     	if (StringUtils.isAnyEmpty(open_id, token)) {
 			throw new BizException(RespCode.NOTEXIST_PARAM);
     	}
-    	
+    	log.error(user.toString());
     	
     	return new HttpBaseBean();
     }
@@ -104,8 +104,11 @@ public class UserController {
     	if (StringUtils.isAnyEmpty(open_id, token)) {
 			throw new BizException(RespCode.NOTEXIST_PARAM);
     	}
-    	
-    	
-    	return new HttpBaseBean();
+    	User user = userService.selectUserbyOpenId(open_id);
+    	HttpBaseBean result = new HttpBaseBean();
+    	if(null != user){
+    		result.setData(user);
+    	}
+    	return result;
     }
 }

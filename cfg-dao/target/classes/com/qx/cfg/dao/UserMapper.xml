@@ -25,6 +25,9 @@
     id, user_name, pwd, wechat_nickname, open_id, unionid, status, thumb_img, phone, 
     sex, qq, email, address, mark, last_login_ip, birthday, description, register_time
   </sql>
+  <select id="selectUserByOpenId" resultMap="BaseResultMap" parameterType="string">
+  	select * from user where open_id=#{openId}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
